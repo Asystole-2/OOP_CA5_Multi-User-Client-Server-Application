@@ -1,68 +1,44 @@
 package DTOs;
 
 public class Movie {
+    private int id;
+    private String title;
+    private float rating;
+    private int duration;
 
- private int movie_id;
- private String movieTitle;
- private float rating;
- private int director;
+    public Movie() {}
 
- public Movie() {
-
- }
- public Movie(int movie_id, String movieTitle, float rating, int director) {
-     this.movie_id = movie_id;
-     this.movieTitle = movieTitle;
-     this.rating = rating;
-     this.director = director;
- }
- public Movie(String movieTitle, float rating, int director) {
-     this.movieTitle = movieTitle;
-     this.rating = rating;
-     this.director = director;
-
- }
-
-    public int getMovie_id() {
-        return movie_id;
-    }
-
-    public void setMovie_id(int movie_id) {
-        this.movie_id = movie_id;
-    }
-
-
-    public float getRating() {
-        return rating;
-    }
-
-    public void setRating(float rating) {
+    public Movie(int id, String title, float rating, int duration) {
+        this.id = id;
+        this.title = title;
         this.rating = rating;
+        this.duration = duration;
     }
 
-    public String getMovieTitle() {
-        return movieTitle;
-    }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public void setMovieTitle(String movieTitle) {
-        this.movieTitle = movieTitle;
-    }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
 
-    public int getDirector() {
-        return director;
-    }
+    public float getRating() { return rating; }
+    public void setRating(float rating) { this.rating = rating; }
 
-    public void setDirector(int director) {
-        this.director = director;
-    }
+    public int getDuration() { return duration; }
+    public void setDuration(int duration) { this.duration = duration; }
 
     @Override
     public String toString() {
         return "Movie{" +
-                "movie_id=" + movie_id +
-                ", movieTitle='" + movieTitle + '\'' +
+                "movie_id=" + id +
+                ", movieTitle='" + title + '\'' +
                 ", rating=" + rating +
-                ", director=" + director +
+                ", duration=" + duration +
                 '}';
     }
 }
+
+
+
+
+
