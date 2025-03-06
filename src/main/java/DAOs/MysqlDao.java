@@ -7,7 +7,7 @@ import Exceptions.DaoException;
 
 public class MysqlDao {
     public Connection getConnection() throws DaoException {
-        String url = "jdbc:mysql://localhost:3306/movie";
+        String url = "jdbc:mysql://localhost:3306/movieticketbooking";
         String username = "root";
         String password = "";
 

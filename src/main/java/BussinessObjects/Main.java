@@ -8,9 +8,11 @@ import DTOs.Customer;
 import DTOs.Booking;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
         MovieDAO movieDao = new MovieDAO();
         CustomerDAO customerDao = new CustomerDAO();
@@ -35,6 +37,17 @@ public class Main {
         List<Booking> bookings = bookingDao.getAllBookings();
         for (Booking booking : bookings) {
             System.out.println(booking.getBookingID() + " - " + booking.getStatus() + " (Price: $" + booking.getTicket_price() + ", Seat: " + booking.getSeat_number() + ")");
+        }
+
+        System.out.println("*****Delete*****");
+        System.out.println("Please enter id for the element you want to delete");
+        int id = sc.nextInt();
+        Movie deleteMovie = movieDao.deleteByKey(id);
+        if(deleteMovie == null){
+            System.out.println("No Movie's found with that ID");
+        }
+        else{
+            System.out.println("Movie " + deleteMovie.getTitle()+ " with the ID of "+ deleteMovie.getId()+ "was successfull");
         }
     }
 }
