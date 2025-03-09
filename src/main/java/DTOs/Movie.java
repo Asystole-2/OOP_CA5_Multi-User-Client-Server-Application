@@ -27,6 +27,7 @@ public class Movie {
     public int getDuration() { return duration; }
     public void setDuration(int duration) { this.duration = duration; }
 
+
     @Override
     public String toString() {
         return "Movie{" +
