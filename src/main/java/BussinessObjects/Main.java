@@ -36,5 +36,6 @@ public class Main {
         for (Booking booking : bookings) {
             System.out.println(booking.getBookingID() + " - " + booking.getStatus() + " (Price: $" + booking.getTicket_price() + ", Seat: " + booking.getSeat_number() + ")");
         }
+
     }
 }
