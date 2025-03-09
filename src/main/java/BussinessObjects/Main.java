@@ -37,5 +37,11 @@ public class Main {
             System.out.println(booking.getBookingID() + " - " + booking.getStatus() + " (Price: $" + booking.getTicket_price() + ", Seat: " + booking.getSeat_number() + ")");
         }
 
+        //Feature 6
+        System.out.println("\n****FILTERED BOOKINGS (Status: Confirmed)****");
+        List<Booking> confirmedBookings = bookingDao.findBookingsApplyFilter("Confirmed");
+        for (Booking booking : confirmedBookings) {
+            System.out.println(booking.getBookingID() + " - " + booking.getStatus() + " (Price: $" + booking.getTicket_price() + ", Seat: " + booking.getSeat_number() + ")");
+        }
     }
 }
