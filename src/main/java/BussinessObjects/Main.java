@@ -20,7 +20,7 @@ public class Main {
         JsonConverter jsonConverter = new JsonConverter();
 
         while (true) {
-            System.out.println("\n_____________________________________MENU ____________________________________________________");
+            System.out.println("\n____________________________MENU ____________________________");
             System.out.println("1. View All Movies");
             System.out.println("2. View All Customers");
             System.out.println("3. View All Bookings");
@@ -166,10 +166,9 @@ public class Main {
                     break;
 
                 case 8:
-//                    jsonConverter.MoviesConverter( movies = movieDao.getAllMovies());
-//                    jsonConverter.BookingConverter(bookings = bookingDao.getAllBookings());
-//                    jsonConverter.CustomerConverter(customers = customerDao.getAllCustomers());
-                    jsonConverter.IterateInMovies(movies=movieDao.getAllMovies());
+                    jsonConverter.MoviesConverter( movies = movieDao.getAllMovies());
+                    jsonConverter.BookingConverter(bookings = bookingDao.getAllBookings());
+                    jsonConverter.CustomerConverter(customers = customerDao.getAllCustomers());
                     break;
                 case 9:
                     System.out.println(" Goodbye ;)");
