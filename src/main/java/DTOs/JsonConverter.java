@@ -81,5 +81,66 @@ public class JsonConverter {
         }
     }
 
+    public void entitiesConverter(List<Movie> movies,List<Booking> bookings,List<Customer> customers) throws DaoException {
+
+        JSONObject jsonObject = new JSONObject();
+        JSONArray jsonArray = new JSONArray(movies);
+        JSONArray jsonArray2 = new JSONArray(bookings);
+        JSONArray jsonArray3 = new JSONArray(customers);
+
+        jsonObject.put("movies", jsonArray);
+        jsonObject.put("bookings", jsonArray2);
+        jsonObject.put("customers", jsonArray3);
+
+        System.out.println("Customer Json Strings:");
+        System.out.println("=============================================================");
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject jsonObject2 = jsonArray3.getJSONObject(i);
+            int id = jsonObject2.getInt("customer_id");
+            System.out.println("  ID: " + id);
+            String userName = jsonObject2.getString("userName");
+            System.out.println("  User Name: " + userName);
+            float walletBalance = jsonObject2.getFloat("walletBalance");
+            System.out.println("  Wallet Balance: " + walletBalance);
+            int ticketsPurchased = jsonObject2.getInt("ticketsPurchased");
+            System.out.println("  Tickets Purchased: " + ticketsPurchased);
+            System.out.println("=============================================================");
+        }
+        System.out.println("Movie Json Strings:");
+
+        System.out.println("=============================================================");
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject jsonObject2 = jsonArray.getJSONObject(i);
+            int id = jsonObject2.getInt("id");
+            System.out.println("  ID: " + id);
+            String title = jsonObject2.getString("title");
+            System.out.println("  Title: " + title);
+            float rating = jsonObject2.getFloat("rating");
+            System.out.println("  Rating: " + rating);
+            int duration = jsonObject2.getInt("duration");
+            System.out.println("  Duration: " + duration);
+            System.out.println("=============================================================");
+
+        }
+        System.out.println("Movie Json Strings:");
+
+        System.out.println("=============================================================");
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject jsonObject2 = jsonArray.getJSONObject(i);
+            int id = jsonObject2.getInt("id");
+            System.out.println("  ID: " + id);
+            String title = jsonObject2.getString("title");
+            System.out.println("  Title: " + title);
+            float rating = jsonObject2.getFloat("rating");
+            System.out.println("  Rating: " + rating);
+            int duration = jsonObject2.getInt("duration");
+            System.out.println("  Duration: " + duration);
+            System.out.println("=============================================================");
+
+        }
+
+
+    }
+
 
 }

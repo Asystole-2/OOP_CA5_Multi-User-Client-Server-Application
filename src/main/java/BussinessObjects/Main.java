@@ -29,7 +29,8 @@ public class Main {
             System.out.println("6. Delete a Movie");
             System.out.println("7. Filter Movies by Rating");
             System.out.println("8. Json entities");
-            System.out.println("9. Exit");
+            System.out.println("9. Entities");
+            System.out.println("10. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
 
@@ -171,12 +172,15 @@ public class Main {
                     jsonConverter.CustomerConverter(customers = customerDao.getAllCustomers());
                     break;
                 case 9:
+                    jsonConverter.entitiesConverter(movies = movieDao.getAllMovies(),bookings = bookingDao.getAllBookings(),customers = customerDao.getAllCustomers());
+                    break;
+                case 10:
                     System.out.println(" Goodbye ;)");
                     sc.close();
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid enter a number between 1 and 9 .");
+                    System.out.println("Invalid enter a number between 1 and 10 .");
                     break;
             }
         }
