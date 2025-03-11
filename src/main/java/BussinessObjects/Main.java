@@ -6,6 +6,7 @@ import DAOs.CustomerDAO;
 import DTOs.Movie;
 import DTOs.Customer;
 import DTOs.Booking;
+import DTOs.JsonConverter;
 
 import java.util.List;
 import java.util.Scanner;
@@ -16,6 +17,7 @@ public class Main {
         MovieDAO movieDao = new MovieDAO();
         CustomerDAO customerDao = new CustomerDAO();
         BookingDAO bookingDao = new BookingDAO();
+        JsonConverter jsonConverter = new JsonConverter();
 
         while (true) {
             System.out.println("\n_____________________________________MENU ____________________________________________________");
@@ -26,7 +28,8 @@ public class Main {
             System.out.println("5. Update a Movie");
             System.out.println("6. Delete a Movie");
             System.out.println("7. Filter Movies by Rating");
-            System.out.println("8. Exit");
+            System.out.println("8. Json entities");
+            System.out.println("9. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
 
@@ -80,7 +83,7 @@ public class Main {
                             newRating = sc.nextFloat();
                             validRating = true;
                         } else {
-                            System.out.println("InvaliD. Please enter a valid number for the rating.");
+                            System.out.println("Invalid. Please enter a valid number for the rating.");
                             sc.nextLine();
                         }
                     }
@@ -163,13 +166,18 @@ public class Main {
                     break;
 
                 case 8:
+//                    jsonConverter.MoviesConverter( movies = movieDao.getAllMovies());
+//                    jsonConverter.BookingConverter(bookings = bookingDao.getAllBookings());
+//                    jsonConverter.CustomerConverter(customers = customerDao.getAllCustomers());
+                    jsonConverter.IterateInMovies(movies=movieDao.getAllMovies());
+                    break;
+                case 9:
                     System.out.println(" Goodbye ;)");
                     sc.close();
                     System.exit(0);
                     break;
-
                 default:
-                    System.out.println("Invalid enter a number between 1 and 8 .");
+                    System.out.println("Invalid enter a number between 1 and 9 .");
                     break;
             }
         }
