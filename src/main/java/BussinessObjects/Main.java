@@ -83,7 +83,7 @@ public class Main {
                             newRating = sc.nextFloat();
                             validRating = true;
                         } else {
-                            System.out.println("InvaliD. Please enter a valid number for the rating.");
+                            System.out.println("Invalid. Please enter a valid number for the rating.");
                             sc.nextLine();
                         }
                     }
@@ -166,9 +166,10 @@ public class Main {
                     break;
 
                 case 8:
-                    jsonConverter.MoviesConverter( movies = movieDao.getAllMovies());
-                    jsonConverter.BookingConverter(bookings = bookingDao.getAllBookings());
-                    jsonConverter.CustomerConverter(customers = customerDao.getAllCustomers());
+//                    jsonConverter.MoviesConverter( movies = movieDao.getAllMovies());
+//                    jsonConverter.BookingConverter(bookings = bookingDao.getAllBookings());
+//                    jsonConverter.CustomerConverter(customers = customerDao.getAllCustomers());
+                    jsonConverter.IterateInMovies(movies=movieDao.getAllMovies());
                     break;
                 case 9:
                     System.out.println(" Goodbye ;)");
