@@ -20,7 +20,7 @@ public class Main {
         JsonConverter jsonConverter = new JsonConverter();
 
         while (true) {
-            System.out.println("\n_____________________________________MENU ____________________________________________________");
+            System.out.println("\n____________________________MENU ____________________________");
             System.out.println("1. View All Movies");
             System.out.println("2. View All Customers");
             System.out.println("3. View All Bookings");
@@ -28,8 +28,11 @@ public class Main {
             System.out.println("5. Update a Movie");
             System.out.println("6. Delete a Movie");
             System.out.println("7. Filter Movies by Rating");
-            System.out.println("8. Json entities");
-            System.out.println("9. Exit");
+            System.out.println("8. Movie entities");
+            System.out.println("9. Booking Entities");
+            System.out.println("10. Customer Entities");
+            System.out.println("11. All Json Entities");
+            System.out.println("12. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
 
@@ -166,18 +169,24 @@ public class Main {
                     break;
 
                 case 8:
-//                    jsonConverter.MoviesConverter( movies = movieDao.getAllMovies());
-//                    jsonConverter.BookingConverter(bookings = bookingDao.getAllBookings());
-//                    jsonConverter.CustomerConverter(customers = customerDao.getAllCustomers());
-                    jsonConverter.IterateInMovies(movies=movieDao.getAllMovies());
+                    jsonConverter.MoviesConverter(movies = movieDao.getAllMovies());
                     break;
                 case 9:
+                    jsonConverter.BookingConverter(bookings = bookingDao.getAllBookings());
+                    break;
+                case 10:
+                    jsonConverter.CustomerConverter(customers = customerDao.getAllCustomers());
+                    break;
+                case 11:
+                    jsonConverter.entitiesConverter(movies = movieDao.getAllMovies(), bookings = bookingDao.getAllBookings(), customers = customerDao.getAllCustomers());
+                    break;
+                case 12:
                     System.out.println(" Goodbye ;)");
                     sc.close();
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid enter a number between 1 and 9 .");
+                    System.out.println("Invalid enter a number between 1 and 12 .");
                     break;
             }
         }
@@ -189,5 +198,5 @@ public class Main {
 //            System.out.println(booking.getBookingID() + " - " + booking.getStatus() + " (Price: $" + booking.getTicket_price() + ", Seat: " + booking.getSeat_number() + ")");
 //        }
 //    }
-}
+    }
 }
