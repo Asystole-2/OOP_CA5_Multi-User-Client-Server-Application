@@ -2,12 +2,8 @@ package DAOs;
 
 import DTOs.Customer;
 import Exceptions.DaoException;
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 
 class CustomerDaoTest {
     CustomerDaoInterface ICustomerDao = null;
