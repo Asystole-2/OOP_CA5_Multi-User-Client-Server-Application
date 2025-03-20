@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER"
+      prefHeight="611.0"
+      prefWidth="431.0"
+      spacing="20.0"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="GUI.MovieController">
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="info" text="(Remember to start XAMPP-MySQL Server)" textFill="GREEN">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label fx:id="titleText" text="Users" textFill="BLUE">
+        <font>
+            <Font size="24.0"/>
+        </font>
+    </Label>
+
+    <Button id="showMoviesButton"
+            fx:id="showUsersButton"
+            onAction="#onShowMoviesButtonClicked"
+            text="Get All Movies"/>
+
+    <VBox prefHeight="200.0" prefWidth="100.0">
+        <ListView id="movieListView"
+                  fx:id="movieListView"
+                  minHeight="-Infinity"
+                  prefHeight="200.0"
+                  prefWidth="250.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+        </ListView>
+    </VBox>
+
+    <Button fx:id="clearAllButton"
+            onAction="#onClearAllButtonClicked" text="Clear the list"/>
+
+    <Label prefHeight="18.0" prefWidth="379.0" text="Messages:"/>
+    <Label fx:id="messageLabel" prefHeight="18.0" prefWidth="378.0"
+           text="Event messages display here..."/>
+
+</VBox>
